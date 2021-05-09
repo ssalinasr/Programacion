@@ -1,0 +1,121 @@
+iniciar-programa
+define-nueva-instruccion gira-derecha como
+ repetir 3 veces gira-izquierda;
+
+ define-nueva-instruccion buscar-esquina como
+ inicio
+   si orientado-al-este y frente-bloqueado entonces
+  gira-derecha;
+  si orientado-al-este y frente-libre entonces
+  gira-derecha;
+  si orientado-al-norte y frente-libre entonces
+  repetir 2 veces gira-izquierda;
+   si orientado-al-oeste y frente-libre entonces
+  gira-izquierda;
+  mientras orientado-al-sur y frente-libre hacer inicio
+  avanza;
+  si orientado-al-sur y frente-bloqueado entonces
+  gira-izquierda;
+
+  fin;
+  mientras orientado-al-este y frente-libre hacer
+        avanza;
+     fin;
+ define-nueva-instruccion piramide como inicio
+
+  mientras junto-a-zumbador hacer inicio
+
+  si orientado-al-este y frente-bloqueado entonces inicio
+  repetir 2 veces gira-izquierda;
+  mientras junto-a-zumbador hacer
+  avanza;
+  fin;
+
+  si orientado-al-oeste y no-junto-a-zumbador entonces inicio
+  gira-derecha;
+  avanza;
+  gira-derecha;
+  fin;
+
+  mientras orientado-al-este y frente-libre hacer inicio
+  si ningun-zumbador-en-la-mochila entonces
+  apagate;
+  si junto-a-zumbador entonces
+  deja-zumbador;
+  si no-junto-a-zumbador entonces
+  deja-zumbador;
+  avanza;
+  fin;
+
+  si orientado-al-este y frente-bloqueado entonces inicio
+  repetir 2 veces gira-izquierda;
+  deja-zumbador;
+  fin;
+  avanza;
+
+  si orientado-al-oeste y no-junto-a-zumbador y derecha-libre entonces inicio
+  gira-derecha;
+  avanza;
+  gira-derecha;
+  fin;
+
+  mientras orientado-al-este y frente-libre hacer inicio
+  si ningun-zumbador-en-la-mochila entonces
+  apagate;
+  si junto-a-zumbador entonces
+  deja-zumbador;
+  si no-junto-a-zumbador entonces
+  deja-zumbador;
+  avanza;
+  fin;
+
+  si orientado-al-este y frente-bloqueado entonces inicio
+  repetir 2 veces gira-izquierda;
+  deja-zumbador;
+  fin;
+
+  fin;
+
+  fin;
+
+  define-nueva-instruccion volver-a-inicio como
+ mientras orientado-al-oeste y derecha-bloqueada hacer inicio
+
+ mientras orientado-al-oeste y derecha-bloqueada hacer inicio
+ si orientado-al-oeste y frente-bloqueado y derecha-bloqueada entonces inicio
+ gira-izquierda;
+ avanza;
+ fin;
+ avanza;
+ mientras orientado-al-sur y frente-libre hacer inicio
+ mientras orientado-al-sur y derecha-bloqueada hacer inicio
+ si orientado-al-sur y frente-bloqueado entonces inicio
+ gira-izquierda;
+ fin;
+ avanza;
+ buscar-esquina;
+ deja-zumbador;
+ piramide;
+
+ fin;
+ fin;
+
+ fin;
+ fin;
+
+
+  inicia-ejecucion
+  inicio
+  buscar-esquina;
+
+  si orientado-al-este y frente-bloqueado entonces inicio
+  deja-zumbador;
+  piramide;
+
+  si orientado-al-oeste y no-junto-a-zumbador y derecha-bloqueada entonces
+  volver-a-inicio;
+     fin;
+  fin;
+
+termina-ejecucion
+finalizar-programa

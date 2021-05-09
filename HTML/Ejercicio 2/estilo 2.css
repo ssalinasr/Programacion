@@ -1,0 +1,37 @@
+@charset"utf-8";
+
+body{
+	background-color : rgb(115,215,215);
+}
+
+p{
+}
+
+h1{
+	font-style : italic;
+	color : rgb(255,255,255);
+	font-family : Arial;
+	letter-spacing : 2px;
+	text-decoration: none;
+}
+
+h2{
+    font-style : italic;
+	color : rgb(25,255,225);
+	font-family : Verdana;
+	letter-spacing : 7px;
+	text-decoration: overline;
+}
+
+h5{
+    font-style : normal;
+	color : rgb(15,185,185);
+	font-family : Courier;
+	letter-spacing : 6px;
+	text-decoration: underline;
+}
+
+table{
+	border: gray 8px solid;
+	background-color: rgb(105,105,105);
+}

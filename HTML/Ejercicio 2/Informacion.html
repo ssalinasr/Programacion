@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>Informacion trabajador</title>
+<link  id="css" rel="stylesheet" type="text/css" href="estilo 2.css">
+</head>
+
+<body>
+<script type="text/javascript">
+function escribir(){
+	    
+var url= location.search.replace("?", "");
+	   
+ var arrUrl = url.split("&");
+	   
+var urlObj={};   
+	    
+for(var i=0; i<arrUrl.length; i++){
+		
+var x= arrUrl[i].split("=");
+		
+urlObj[x[0]]=x[1]
+	    }
+	   
+ return urlObj;
+	}
+	
+    var varGet = escribir(); 
+    
+	
+    document.write ("<h1><center><p>Bienvenido "+ varGet.nombre+" "+varGet.apellidos+"</h1></p></center>")
+    document.write ("<h2><center><p>Su identificación es "+ varGet.identificacion+"</h2></p></center>")
+	document.write ("<h2><center><p>Su sexo es "+ varGet.sexo+"</h2></p></center>")
+	document.write ("<h5><center><p>Su cargo es "+ varGet.cargo+"</h5></p></center>")
+	 alert("Este formulario esta completo");
+	
+</script>
+<span>
+<p></p>
+</span id="name">
+<p><center><a href="Ejercicio 2.html">Regresar>></a></center></p>
+</body>
+</html>

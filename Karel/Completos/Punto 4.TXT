@@ -1,0 +1,96 @@
+iniciar-programa
+    inicia-ejecucion
+    mientras junto-a-zumbador hacer inicio
+    coge-zumbador;
+    avanza;
+
+    si no-junto-a-zumbador entonces inicio
+    gira-izquierda;
+    avanza;
+    gira-izquierda;
+    avanza;
+    fin;
+
+    si no-junto-a-zumbador entonces inicio
+    repetir 2 veces gira-izquierda;
+    repetir 2 veces avanza;
+    fin;
+
+    si no-junto-a-zumbador entonces inicio
+    repetir 3 veces gira-izquierda;
+    repetir 2 veces avanza;
+    fin;
+
+    si no-junto-a-zumbador entonces inicio
+    gira-izquierda;
+    avanza;
+    gira-izquierda;
+    avanza;
+    fin;
+
+    si no-junto-a-zumbador entonces inicio
+    gira-izquierda;
+    repetir 2 veces avanza;
+    repetir 3 veces gira-izquierda;
+    fin;
+
+    si no-junto-a-zumbador entonces inicio
+    repetir 2 veces gira-izquierda;
+    repetir 2 veces avanza;
+    repetir 3 veces gira-izquierda;
+    fin;
+
+    si no-junto-a-zumbador entonces inicio
+    avanza;
+    repetir 3 veces gira-izquierda;
+    avanza;
+    fin;
+
+    si no-junto-a-zumbador entonces inicio
+    repetir 2 veces gira-izquierda;
+    repetir 2 veces avanza;
+    fin;
+
+    si no-junto-a-zumbador entonces inicio
+    repetir 2 veces gira-izquierda;
+    repetir 2 veces avanza;
+    avanza;
+    gira-izquierda;
+    avanza;
+    fin;
+
+    si no-junto-a-zumbador entonces inicio
+    repetir 3 veces gira-izquierda;
+    repetir 4 veces avanza;
+    fin;
+
+    si no-junto-a-zumbador entonces inicio
+    repetir 3 veces gira-izquierda;
+    avanza;
+    repetir 3 veces gira-izquierda;
+    avanza;
+    fin;
+
+    si no-junto-a-zumbador entonces inicio
+    avanza;
+    repetir 3 veces gira-izquierda;
+    avanza;
+    fin;
+
+    si no-junto-a-zumbador entonces inicio
+    avanza;
+    gira-izquierda;
+    avanza;
+    fin;
+
+    si no-junto-a-zumbador entonces inicio
+    repetir 2 veces avanza;
+    repetir 3 veces gira-izquierda;
+    avanza;
+    repetir 3 veces gira-izquierda;
+    avanza;
+    fin;
+        fin;
+        apagate;
+    termina-ejecucion
+finalizar-programa

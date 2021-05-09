@@ -1,0 +1,255 @@
+<html lang="es">
+
+    <head>
+       <title>Resultado hoja de vida</title>
+
+	   <meta http-equiv=”Content-Type” content=”text/html; charset=UTF-8″ />
+	   <link  id="css" rel="stylesheet" type="text/css" href="estilo hoja salida.css">
+    </head>
+
+    <body>
+ 
+	<table border="3" align="center">
+	<tr>
+	<td colspan = "3">
+	<h1><center>Curriculum Vitae</center></h1>
+	</td>
+    <td colspan="2">
+	<center><img src="usuario-hombre.png" border="1"></center>
+	</td>
+	</tr>
+	<tr>
+	<td>
+	<h3>Nombres</h3>
+	</td>
+	<td>
+	<span id="resnombres">Datos nombre</span>
+	</td>
+	<td>
+	<h3>Apellidos</h3>
+	</td>
+	<td>
+	<span id="resapellidos">Datos apellido</span>
+	</td>
+	</tr>
+	
+	<tr>
+	<td>
+	<h3>No.Identificación</h3>
+	</td>
+	<td>
+	<span id="resid">Datos ID</span>
+	</td>
+	<td>
+	<h3>Expedido en</h3>
+	</td>
+	<td>
+	<span id="resexpedido">Datos expedicion</span>
+	</td>
+	</tr>
+	
+	<tr>
+	<td>
+	<h3>Fecha de nacimiento</h3>
+	</td>
+	<td>
+    <span id="resdia">Datos dia</span>
+	<span id="resmes">Datos mes</span>
+	<span id="resanio">Datos año</span>	
+	</td>
+	<td>
+	<h3>Lugar de nacimiento</h3>
+	</td>
+	<td>
+	<span id="reslugarnacimiento">Datos lug.nacimiento</span>
+	</td>
+	</tr>
+	
+	<tr>
+	<td>
+	<h3>Dirección Residencia</h3>
+	</td>
+	<td>
+	<span id="resdireccion">Datos direccion</span>
+	</td>
+	<td>
+	<h3>Ciudad</h3>
+	</td>
+	<td>
+	<span id="resciudad">Datos ciudad</span>
+	</td>
+	</tr>
+	<tr>
+	<td colspan="2">
+	</td>
+	<td>
+	<h3>Localidad/Barrio</h3>
+	</td>
+	<td>
+	<span id="reslocal">Datos localidad</span>
+	</td>
+	</tr>
+	<tr>
+	<td>
+	<h3>Teléfono</h3>
+	</td>
+	<td>
+	<span id="restelefono">Datos telefono</span>
+	</td>
+	<td>
+	<h3>Celular</h3>
+	</td>
+	<td>
+	<span id="rescelular">Datos celular</span>
+	</td>
+	</tr>
+	
+	<tr>
+	<td>
+	<h3>Estudios</h3>
+	</td>
+	<td>
+     <span id="resestudios">Datos estudios</span>
+	</td>
+	<td>
+	<h3>Titulo</h3>
+	</td>
+	<td>
+	<span id="restitulo">Datos titulo</span>
+	</td>
+	</tr>
+	<tr>
+	<td colspan="2">
+	<h3>Cargo a desempeñar</h3>
+	</td>
+	<td colspan="2">
+	<span id="rescargo">Datos cargo</span>
+	</td>
+	</tr>
+	
+    <tr>
+	<td colspan="4">
+	<h3>Perfil profesional</h3>
+	</td>
+	</tr>
+	<tr>
+	<td colspan="4">
+	<span id="resperfil">Datos perfil</span>
+	</td>
+	</tr>
+	
+	<tr>
+	<td colspan="4">
+	<h3>Experiencia laboral</h3>
+	</td>
+	</tr>
+	<tr>
+	<td colspan="4">
+	<span id="resexperiencia">Datos experiencia</span>
+	</td>
+	</tr>
+	
+    <tr>
+	<td colspan="4">
+	<h3>Referencias Personales</h3>
+	</td>
+	</tr>
+	<tr>
+	<td colspan="4">
+	<span id="resreferencias">Datos referencias</span>
+	</td>
+	</tr>
+	</table>
+	<p> </p>
+	<p> </p>
+	<center><a href="Form hoja de vida.html">Regresar a formulario</a></center>
+	
+	
+		
+	<script type="text/javascript">
+	function getVarsUrl(){
+	    
+var url= location.search.replace("?", "");
+	   
+ var arrUrl = url.split("&");
+	   
+var urlObj={};   
+	    
+for(var i=0; i<arrUrl.length; i++){
+		
+var x= arrUrl[i].split("=");
+		
+urlObj[x[0]]=x[1]
+	    }
+	   
+ return urlObj;
+	}
+	
+var misVariablesGet = getVarsUrl(); 
+
+  
+var nombres = misVariablesGet.nombres;
+var apellidos = misVariablesGet.apellidos;
+var anio = misVariablesGet.anio;
+var barrio = misVariablesGet.barrio;
+var cargo = misVariablesGet.cargo;
+var celular = misVariablesGet.celular;
+var ciudadresidencia = misVariablesGet.ciudadresidencia;
+var dia = misVariablesGet.dia+"/";
+var direccion = misVariablesGet.direccion;
+var estudios = misVariablesGet.estudios;
+var expedicion= misVariablesGet.expedicion;
+var experiencia= misVariablesGet.experiencia;
+var identificacion = misVariablesGet.identificacion;
+var lugarnacimiento = misVariablesGet.lugarnacimiento;
+var mes = misVariablesGet.mes+"/";
+var perfil = misVariablesGet.perfil;
+var referencias = misVariablesGet.referencias;
+var telefono = misVariablesGet.telefono;
+var titulo = misVariablesGet.titulo;
+
+nombres = nombres.replace(/\+/g," ");
+apellidos = apellidos.replace(/\+/g," ");
+perfil = perfil.replace(/\+/g," ");
+experiencia = experiencia.replace(/\+/g," ");
+referencias = referencias.replace(/\+/g," ");
+direccion = direccion.replace(/\+/g," ");
+titulo = titulo.replace(/\+/g," ");
+cargo = cargo.replace(/\+/g," ");
+barrio = barrio.replace(/\+/g," ");
+lugarnacimiento = lugarnacimiento.replace(/\+/g," ");
+var referenciascon = referencias.slice(0,50)+"\n"+referencias.slice(51,100)+"\n"+referencias.slice(101,150)
++"\n"+referencias.slice(151,200)+"\n"+referencias.slice(201,250);
+var experienciacon = experiencia.slice(0,50)+"\n"+experiencia.slice(51,100)+"\n"+experiencia.slice(101,150)
++"\n"+experiencia.slice(151,200)+"\n"+experiencia.slice(201,250);
+var perfilcon = perfil.slice(0,50)+"\n"+perfil.slice(51,100)+"\n"+perfil.slice(101,150)
++"\n"+perfil.slice(151,200)+"\n"+perfil.slice(201,250);
+
+
+
+var resnombres = document.getElementById("resnombres").innerHTML = nombres;
+var resapellidos = document.getElementById("resapellidos").innerHTML = apellidos;
+var resanio = document.getElementById("resanio").innerHTML = anio;
+var reslocal = document.getElementById("reslocal").innerHTML = barrio;
+var rescargo = document.getElementById("rescargo").innerHTML = cargo;
+var rescelular = document.getElementById("rescelular").innerHTML = celular;
+var resciudad = document.getElementById("resciudad").innerHTML = ciudadresidencia;
+var resdia = document.getElementById("resdia").innerHTML = dia;
+var resdireccion = document.getElementById("resdireccion").innerHTML = direccion;
+var resestudios = document.getElementById("resestudios").innerHTML = estudios;
+var resexpedido = document.getElementById("resexpedido").innerHTML = expedicion;
+var resexperiencia = document.getElementById("resexperiencia").innerHTML = experienciacon;
+var resid = document.getElementById("resid").innerHTML = identificacion;
+var reslugarnacimiento = document.getElementById("reslugarnacimiento").innerHTML = lugarnacimiento;
+var resmes = document.getElementById("resmes").innerHTML = mes;
+var resperfil= document.getElementById("resperfil").innerHTML = perfilcon;
+var resreferencias = document.getElementById("resreferencias").innerHTML = referenciascon;
+var restelefono = document.getElementById("restelefono").innerHTML = telefono;
+var restitulo = document.getElementById("restitulo").innerHTML = titulo;
+
+	
+</script>
+</body>
+	
+
+</html>

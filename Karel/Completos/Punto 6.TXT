@@ -1,0 +1,109 @@
+iniciar-programa
+define-nueva-instruccion gira-derecha como
+repetir 3 veces gira-izquierda;
+
+define-nueva-instruccion buscar-inicio como
+inicio
+
+si orientado-al-norte entonces
+repetir 2 veces gira-izquierda;
+
+si orientado-al-oeste entonces
+gira-izquierda;
+
+si orientado-al-este entonces
+gira-derecha;
+
+si orientado-al-sur y frente-bloqueado y derecha-bloqueada  entonces
+repetir 2 veces gira-izquierda;
+
+si orientado-al-sur y frente-bloqueado y izquierda-bloqueada  entonces
+gira-derecha;
+
+
+
+
+
+
+mientras orientado-al-sur y frente-libre hacer
+inicio
+avanza;
+si orientado-al-sur y frente-bloqueado entonces
+gira-derecha;
+fin;
+
+mientras orientado-al-oeste y izquierda-bloqueada hacer
+inicio
+avanza;
+si orientado-al-oeste y frente-bloqueado entonces
+gira-derecha;
+fin;
+fin;
+
+    inicia-ejecucion
+    inicio
+    buscar-inicio;
+
+
+    mientras orientado-al-norte y frente-libre hacer
+    inicio
+    avanza;
+    mientras junto-a-zumbador hacer
+    coge-zumbador;
+
+    mientras orientado-al-norte y frente-bloqueado y derecha-bloqueada hacer
+    inicio
+    deja-zumbador;
+    si ningun-zumbador-en-la-mochila entonces
+    apagate;
+    fin;
+
+
+
+    si orientado-al-norte y frente-bloqueado entonces
+    inicio
+    mientras junto-a-zumbador hacer coge-zumbador;
+    gira-derecha;
+    mientras junto-a-zumbador hacer coge-zumbador;
+    avanza;
+    mientras junto-a-zumbador hacer coge-zumbador;
+    gira-derecha;
+    si junto-a-zumbador entonces coge-zumbador;
+    fin;
+
+   mientras orientado-al-sur y frente-libre hacer
+    inicio
+    avanza;
+    mientras junto-a-zumbador hacer
+    coge-zumbador;
+    fin;
+
+    si orientado-al-sur y frente-bloqueado entonces
+    inicio
+    mientras junto-a-zumbador hacer coge-zumbador;
+    gira-izquierda;
+    mientras junto-a-zumbador hacer coge-zumbador;
+    avanza;
+    mientras junto-a-zumbador hacer coge-zumbador;
+    gira-izquierda;
+
+
+    mientras orientado-al-norte y frente-bloqueado y derecha-bloqueada hacer
+    inicio
+    deja-zumbador;
+    si ningun-zumbador-en-la-mochila entonces
+    apagate;
+
+    fin;
+
+    fin;
+    fin;
+    fin;
+
+
+
+
+
+        apagate;
+    termina-ejecucion
+finalizar-programa

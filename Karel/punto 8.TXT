@@ -1,0 +1,53 @@
+iniciar-programa
+
+ inicia-ejecucion
+
+ mientras orientado-al-norte y frente-libre hacer inicio
+ avanza;
+  si frente-bloqueado entonces inicio
+  repetir 3 veces gira-izquierda;
+  avanza;
+  fin;
+
+   mientras orientado-al-este y frente-libre hacer
+   inicio
+   si orientado-al-este y derecha-libre entonces inicio
+  repetir 3 veces gira-izquierda;
+   avanza;
+   fin;
+
+   si orientado-al-sur y frente-bloqueado entonces inicio
+   deja-zumbador;
+   repetir 2 veces gira-izquierda;
+   avanza;
+   repetir 3 veces gira-izquierda;
+   fin;
+   avanza;
+   fin;
+
+   si orientado-al-sur y frente-libre entonces inicio
+   repetir 2 veces gira-izquierda;
+   avanza;
+   repetir 3 veces gira-izquierda;
+   fin;
+
+   si orientado-al-este y frente-bloqueado entonces inicio
+   repetir 3 veces gira-izquierda;
+   mientras orientado-al-sur y izquierda-bloqueada hacer
+   si orientado-al-sur y derecha-bloqueada entonces inicio
+   repetir 2 veces gira-izquierda;
+   avanza;
+   gira-izquierda;
+   avanza;
+   gira-izquierda;
+   fin;
+
+   avanza;
+   fin;
+
+           fin;
+
+
+        apagate;
+    termina-ejecucion
+finalizar-programa

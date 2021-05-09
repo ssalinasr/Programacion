@@ -1,0 +1,139 @@
+iniciar-programa
+    inicia-ejecucion
+    mientras frente-libre y no-junto-a-zumbador hacer inicio
+     deja-zumbador;
+     avanza;
+
+     inicio
+     si orientado-al-este y frente-bloqueado entonces
+     gira-izquierda;
+
+     si orientado-al-norte y frente-bloqueado entonces
+     gira-izquierda;
+
+     si orientado-al-oeste y frente-bloqueado entonces
+     gira-izquierda;
+
+     si orientado-al-sur y frente-bloqueado entonces
+     gira-izquierda;
+
+     fin;
+
+
+    fin;
+
+    mientras junto-a-zumbador y frente-libre hacer inicio
+
+    avanza;
+
+     mientras orientado-al-sur y no-junto-a-zumbador hacer inicio
+     deja-zumbador;
+     avanza;
+     si orientado-al-sur y frente-bloqueado entonces
+     gira-izquierda;
+     si no-junto-a-zumbador entonces
+     deja-zumbador;
+     fin;
+
+
+     si orientado-al-este y izquierda-libre y junto-a-zumbador entonces
+     gira-izquierda;
+
+    si orientado-al-este y frente-bloqueado y junto-a-zumbador entonces
+     gira-izquierda;
+
+     si orientado-al-norte y frente-bloqueado y junto-a-zumbador entonces
+     gira-izquierda;
+
+     si orientado-al-oeste y frente-bloqueado y junto-a-zumbador entonces
+     gira-izquierda;
+
+     si orientado-al-sur y frente-bloqueado y junto-a-zumbador entonces
+     gira-izquierda;
+
+     avanza;
+     fin;
+     mientras orientado-al-norte y no-junto-a-zumbador hacer inicio
+     deja-zumbador;
+     avanza;
+
+     si orientado-al-norte y junto-a-zumbador entonces
+     gira-izquierda;
+     fin;
+
+     si orientado-al-sur y frente-bloqueado y junto-a-zumbador entonces
+     gira-izquierda;
+
+     mientras orientado-al-oeste y junto-a-zumbador hacer inicio
+     si orientado-al-oeste y junto-a-zumbador y frente-bloqueado entonces
+     gira-izquierda;
+     avanza;
+     fin;
+
+     mientras orientado-al-sur y frente-libre y junto-a-zumbador hacer inicio
+     si orientado-al-sur y izquierda-libre y junto-a-zumbador entonces
+     gira-izquierda;
+     avanza;
+     fin;
+
+     mientras orientado-al-este y frente-libre hacer inicio
+     si no-junto-a-zumbador entonces
+     deja-zumbador;
+     si junto-a-zumbador entonces
+     avanza;
+     fin;
+
+     si orientado-al-este y frente-bloqueado y junto-a-zumbador entonces
+     repetir 3 veces gira-izquierda;
+
+     mientras orientado-al-sur y junto-a-zumbador y frente-libre hacer inicio
+     avanza;
+     si orientado-al-sur y frente-bloqueado y junto-a-zumbador entonces
+     repetir 3 veces gira-izquierda;
+     fin;
+
+     mientras orientado-al-oeste y junto-a-zumbador y frente-libre hacer inicio
+     avanza;
+     si orientado-al-oeste y derecha-libre y junto-a-zumbador entonces
+     repetir 3 veces gira-izquierda;
+     fin;
+
+     mientras orientado-al-norte y junto-a-zumbador hacer inicio
+     si orientado-al-norte y junto-a-zumbador y frente-bloqueado entonces inicio
+     apagate;
+     fin;
+     avanza;
+     mientras orientado-al-norte y no-junto-a-zumbador hacer inicio
+     deja-zumbador;
+     avanza;
+     si orientado-al-norte y frente-bloqueado entonces
+     gira-izquierda;
+     fin;
+
+     mientras orientado-al-oeste y frente-libre y junto-a-zumbador hacer inicio
+     avanza;
+     si orientado-al-oeste y frente-libre y junto-a-zumbador y izquierda-libre entonces
+     gira-izquierda;
+     fin;
+     mientras orientado-al-sur y frente-libre hacer inicio
+     si junto-a-zumbador entonces avanza;
+     si no-junto-a-zumbador entonces inicio
+     deja-zumbador;
+     avanza;
+     fin;
+     si orientado-al-sur y frente-bloqueado y junto-a-zumbador entonces
+     repetir 3 veces gira-izquierda;
+     fin;
+
+     fin;
+
+
+
+
+
+
+
+
+        apagate;
+    termina-ejecucion
+finalizar-programa
