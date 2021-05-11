@@ -1,0 +1,3 @@
+int k = 4;
+int f = 8;
+int p = k + f;

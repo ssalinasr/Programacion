@@ -1,0 +1,104 @@
+public void preOrder(){
+        for(int i = 0; i < matrix[0].length;i ++){
+            for(int j = 0; j < matrix.length; j++){
+                if(matrix[j][i].matches("[a-z}]")){
+                    preOrder += matrix[j][i];
+                }
+            }
+        }
+        preOrder += "}";
+    }
+    public void inOrder(){
+        ArrayList<Integer> auxRows = new ArrayList<Integer>();
+        ArrayList<Integer> auxColumns = new ArrayList<Integer>();
+        for (int i = 0; i < matrix[0].length ; i++) {
+            jCycle: for (int j = matrix.length - 1; j >= 0; j--) {
+                if (auxColumns.size() > 0 && matrix[auxRows.get(auxRows.size() - 1)][i].contentEquals("+")) {
+                    break jCycle;
+                }else if (matrix[j][i].matches("[a-z}*+]")) {
+                    if (matrix[j][i].matches("[a-z}]"))
+                        inOrder += matrix[j][i];
+                    if (j == 0 && i < matrix[0].length-1&& matrix[j][i + 1].contentEquals("+")) {
+                        int k = 1;
+                        while (k + i < matrix[0].length && matrix[0][i + k].contentEquals("+")  ) {
+                            k++;
+                        }
+                        if(k+i == matrix[0].length){
+                            inOrder +="}";
+                        }
+                        i = k + i - 1;
+                    } else {
+                            if (j != 0 && i < matrix[0].length-1 && matrix[j][i + 1].matches("[a-z}+]") && matrix[j - 1][i + 1].matches("[*+]")
+                            && matrix[j][i].matches("[a-z]")) {
+                                auxRows.add(j);
+                                auxColumns.add(i);
+                                if(matrix[j-1][i].matches("[a-z]")){
+                                    inOrder += matrix[j+1][i];
+                                }
+                                
+                                break jCycle;
+                            } else if (j != 0 && ((matrix[j - 1][i].matches("[*+]") && !matrix[j][i].matches("[*+]"))
+                                    || matrix[j][i].matches("[*+]"))) {
+                                if (auxColumns.size() > 0) {
+                                    
+                                    j = auxRows.get(auxRows.size() - 1);
+                                    i = auxColumns.get(auxColumns.size() - 1);
+                                    auxColumns.remove(auxColumns.size() - 1);
+                                    auxRows.remove(auxRows.size() - 1);
+                                    
+                                }
+                            }
+                        
+                    }
+                }
+            }
+        }
+        inOrder+="?";
+    }
+    public void posOrder(){
+        
+        ArrayList<Integer> auxRows = new ArrayList<Integer>();
+        ArrayList<Integer> auxColumns = new ArrayList<Integer>();
+        for (int i = 0; i < matrix[0].length ; i++) {
+            jCycle: for (int j = matrix.length - 1; j >= 0; j--) {
+                
+                if (auxColumns.size() > 0 && matrix[auxRows.get(auxRows.size() - 1)][i].contentEquals("+")) {
+                    break jCycle;
+                }else
+                if (matrix[j][i].matches("[a-z}*+]")) {
+                    if (matrix[j][i].matches("[a-z}]"))
+                        posOrder += matrix[j][i];
+                    if (j == 0 && i < matrix[0].length-1&& matrix[j][i + 1].contentEquals("+")) {
+                        int k = 1;
+                        while (k + i < matrix[0].length && matrix[0][i + k].contentEquals("+")  ) {
+                            k++;
+                        }
+                        if(k+i == matrix[0].length){
+                            posOrder +="}";
+                        }
+                        i = k + i - 1;
+                    } else {
+                            if (j != 0 && i < matrix[0].length-1 && matrix[j][i + 1].matches("[a-z}+]") && matrix[j - 1][i + 1].matches("[*+]")
+                            && matrix[j][i].matches("[a-z]")) {
+                                auxRows.add(j);
+                                auxColumns.add(i);
+                                
+                                break jCycle;
+                            } else if (j != 0 && ((matrix[j - 1][i].matches("[*+]") && !matrix[j][i].matches("[*+]"))
+                                    || matrix[j][i].matches("[*+]"))) {
+                                if (auxColumns.size() > 0) {
+                                    
+                                    j = auxRows.get(auxRows.size() - 1);
+                                    i = auxColumns.get(auxColumns.size() - 1);
+                                    auxColumns.remove(auxColumns.size() - 1);
+                                    auxRows.remove(auxRows.size() - 1);
+                                    
+                                }
+                            }
+                        
+                    }
+                }
+            }
+        }
+        posOrder+="?";
+    }  
